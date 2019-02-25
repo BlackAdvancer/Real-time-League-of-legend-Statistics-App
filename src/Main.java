@@ -1,3 +1,4 @@
+import model.Match;
 import model.Summoner;
 import model.SummonerManager;
 import java.util.Scanner;
@@ -17,6 +18,8 @@ public class Main {
             }else {
                 summoner = summonerManager.getSummoner(name);
                 System.out.println(summoner.toString());
+                for (Match m : summoner.getMatches())
+                    System.out.println(m.toString());
             }
 
         }

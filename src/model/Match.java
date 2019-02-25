@@ -1,7 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Match {
     String platformId;
@@ -12,9 +11,9 @@ public class Match {
     long gameCreation;
     Team blurTeam;
     Team redTeam;
-    List<Participant> participants;
+    Participant[] participants;
 
-    public Match(String platformId, String gameMode, String gameType, int mapId, long gameDuration, long gameCreation, Team blurTeam, Team redTeam) {
+    public Match(String platformId, String gameMode, String gameType, int mapId, long gameDuration, long gameCreation, Team blurTeam, Team redTeam, Participant[] participants) {
         this.platformId = platformId;
         this.gameMode = gameMode;
         this.gameType = gameType;
@@ -23,10 +22,24 @@ public class Match {
         this.gameCreation = gameCreation;
         this.blurTeam = blurTeam;
         this.redTeam = redTeam;
-        participants = new ArrayList<>();
+        this.participants = participants;
     }
 
-    public void addParticipants(Participant participant){
-        participants.add(participant);
+    @Override
+    public String toString() {
+        String temp;
+        temp =  "Match{" +
+                "platformId='" + platformId + '\'' +
+                ", gameMode='" + gameMode + '\'' +
+                ", gameType='" + gameType + '\'' +
+                ", mapId=" + mapId +
+                ", gameDuration=" + gameDuration +
+                ", gameCreation=" + gameCreation +
+                '}' + "\nBlue Team: " + blurTeam.toString() +
+                "\nred Team: " + redTeam.toString();
+        StringBuilder sb = new StringBuilder(temp);
+        for (Participant p : participants)
+            sb.append(p.toString());
+        return  sb.toString();
     }
 }

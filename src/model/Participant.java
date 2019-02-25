@@ -7,7 +7,56 @@ public class Participant extends Player {
     String rank;
     ParticipantStat participantStat;
 
-    public Participant(){}
+    public Participant(String summonerName, String summonerId, String accountId, int profileIronId, int participantId) {
+        super(summonerName, summonerId, accountId, profileIronId);
+        this.participantId = participantId;
+    }
 
+    public int getParticipantId() {
+        return participantId;
+    }
 
- }
+    public void setParticipantId(int participantId) {
+        this.participantId = participantId;
+    }
+
+    public int getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
+    }
+
+    public int getChampionId() {
+        return championId;
+    }
+
+    public void setChampionId(int championId) {
+        this.championId = championId;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
+
+    public ParticipantStat getParticipantStat() {
+        return participantStat;
+    }
+
+    public void setParticipantStat(ParticipantStat participantStat) {
+        this.participantStat = participantStat;
+    }
+
+    @Override
+    public String toString() {
+        return "\nParticipant ID: " + participantId +
+                "\nTeam ID: " + teamId +
+                "\nChampion ID: " + championId +
+                "\nRank: " + rank + participantStat.toString();
+    }
+}

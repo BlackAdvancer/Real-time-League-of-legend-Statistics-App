@@ -1,6 +1,9 @@
 package model;
 
 
+import parsers.MatchParsers;
+import providers.MatchProvider;
+
 import java.util.List;
 
 public class Summoner extends Player {
@@ -14,6 +17,15 @@ public class Summoner extends Player {
 
     public void setMatchesList(long[] matchesList) {
         this.matchesList = matchesList;
+    }
+
+    public Match[] getMatches(){
+        Match[] matches = new Match[5];
+        MatchParsers matchParsers = new MatchParsers();
+        for(int i = 0; i < 5; i++){
+            matches[i] = matchParsers.ParseMatch(Long.toString(matchesList[i]));
+        }
+        return  matches;
     }
 
     @Override
