@@ -38,7 +38,7 @@ public class MatchParsers {
             for(int i = 0; i < teams.length(); i++){
                 boolean win = false;
                 JSONObject to = teams.getJSONObject(i);
-                if(to.getString("win").equals("win"))
+                if(to.getString("win").equals("Win"))
                     win = true;
 
                 Team team = new Team(to.getInt("teamId"),
