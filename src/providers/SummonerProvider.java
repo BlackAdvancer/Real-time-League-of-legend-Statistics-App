@@ -18,7 +18,7 @@ public class SummonerProvider extends AbstractHttpDataProvider{
 
     @Override
     protected URL getURL() throws MalformedURLException{
-        String web = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + name +"?api_key="+API_KEY;
+        String web = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + name.replaceAll("\\s","") +"?api_key="+API_KEY;
         return new URL(web);
     }
 

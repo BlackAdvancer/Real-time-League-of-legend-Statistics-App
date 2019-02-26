@@ -13,7 +13,7 @@ public class MatchParsers {
 
     public MatchParsers() {matchProvider = new MatchProvider();}
 
-    public Match ParseMatch(String gameId){
+    public Match ParseMatch(long gameId){
 
         matchProvider.setGameId(gameId);
         Match match = null;
@@ -77,7 +77,8 @@ public class MatchParsers {
                         so.getInt("goldEarned"),
                         so.getInt("totalMinionsKilled"),
                         so.getInt("champLevel"),
-                        items);
+                        items,
+                        so.getBoolean("win"));
 
                 participantsList[i].setTeamId(po.getInt("teamId"));
                 participantsList[i].setChampionId(po.getInt("championId"));
@@ -90,13 +91,14 @@ public class MatchParsers {
                     jo.getString("gameMode"),
                     jo.getString("gameType"),
                     jo.getInt("mapId"),
+                    jo.getLong("gameId"),
                     jo.getLong("gameDuration"),
                     jo.getLong("gameCreation"),
                     blueTeam,
                     redTeam,
                     participantsList);
         }catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.err.println("Error in Match Parser parsing: " + gameId + e.getMessage());
         }
 
         return match;

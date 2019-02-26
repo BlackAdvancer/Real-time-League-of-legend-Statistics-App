@@ -24,7 +24,9 @@ public class SummonerManager {
         Summoner s = summonerMap.get(name);
         if(s != null)
             return s;
-        return summonerParsers.ParseSummoner(name);
+        s = summonerParsers.ParseSummoner(name);
+        summonerMap.put(name,s);
+        return s;
     }
 
 }

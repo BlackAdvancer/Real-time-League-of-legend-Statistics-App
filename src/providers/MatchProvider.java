@@ -7,13 +7,13 @@ import java.net.URL;
 import static providers.ApiKey.API_KEY;
 
 public class MatchProvider extends AbstractHttpDataProvider{
-    private String gameId;
+    private long gameId;
 
     public MatchProvider(){
         super();
     }
 
-    public void setGameId(String gameId) {
+    public void setGameId(long gameId) {
         this.gameId = gameId;
     }
 

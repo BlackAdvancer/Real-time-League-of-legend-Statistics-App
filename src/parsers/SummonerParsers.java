@@ -27,7 +27,7 @@ public class SummonerParsers {
             summoner.setMatchesList(matchListParsers.ParseMatchList(accountId));
             return summoner;
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            System.err.println("Error in Summoner Parser parsing "+ name + e.getMessage());
         }
         return null;
     }

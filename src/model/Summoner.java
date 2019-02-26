@@ -19,13 +19,8 @@ public class Summoner extends Player {
         this.matchesList = matchesList;
     }
 
-    public Match[] getMatches(){
-        Match[] matches = new Match[5];
-        MatchParsers matchParsers = new MatchParsers();
-        for(int i = 0; i < 5; i++){
-            matches[i] = matchParsers.ParseMatch(Long.toString(matchesList[i]));
-        }
-        return  matches;
+    public long[] getMatchesList() {
+        return matchesList;
     }
 
     @Override

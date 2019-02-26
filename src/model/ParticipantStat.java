@@ -10,8 +10,9 @@ public class ParticipantStat {
     int totalMinionsKilled;
     int champLevel;
     int[] items;
+    boolean win;
 
-    public ParticipantStat(int kills, int deaths, int assists, int goldEarned, int totalMinionsKilled, int champLevel, int[] items) {
+    public ParticipantStat(int kills, int deaths, int assists, int goldEarned, int totalMinionsKilled, int champLevel, int[] items, boolean win) {
         this.kills = kills;
         this.deaths = deaths;
         this.assists = assists;
@@ -19,6 +20,35 @@ public class ParticipantStat {
         this.totalMinionsKilled = totalMinionsKilled;
         this.champLevel = champLevel;
         this.items = items;
+        this.win = win;
+    }
+
+    public int getKills() {
+        return kills;
+    }
+
+    public int getDeaths() {
+        return deaths;
+    }
+
+    public int getAssists() {
+        return assists;
+    }
+
+    public int getGoldEarned() {
+        return goldEarned;
+    }
+
+    public int getTotalMinionsKilled() {
+        return totalMinionsKilled;
+    }
+
+    public int getChampLevel() {
+        return champLevel;
+    }
+
+    public int[] getItems() {
+        return items;
     }
 
     @Override

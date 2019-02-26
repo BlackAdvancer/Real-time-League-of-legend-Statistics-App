@@ -52,6 +52,17 @@ public class Participant extends Player {
         this.participantStat = participantStat;
     }
 
+    public MatchInfo getMatchInfo(){
+        return new MatchInfo(super.getSummonerName(),
+                championId,
+                participantStat.champLevel,
+                participantStat.kills,
+                participantStat.deaths,
+                participantStat.assists,
+                participantStat.items,
+                participantStat.win);
+    }
+
     @Override
     public String toString() {
         return "\nParticipant ID: " + participantId +
