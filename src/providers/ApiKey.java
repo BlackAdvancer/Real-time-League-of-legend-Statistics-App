@@ -1,5 +1,5 @@
 package providers;
 
 public class ApiKey {
-    public static final String API_KEY = "RGAPI-a71a335c-3a16-42bf-8354-76d473a62faa";
+    public static final String API_KEY = "RGAPI-5f6302d1-7ed6-40cb-b37a-60475bbb30e9";
 }

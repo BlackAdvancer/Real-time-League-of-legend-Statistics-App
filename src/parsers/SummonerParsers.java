@@ -15,6 +15,7 @@ public class SummonerParsers {
     }
 
     public Summoner ParseSummoner(String name) {
+        //TODO: name format needs to be checked.
         try {
             summonerProvider.setName(name);
             JSONObject jo = new JSONObject(summonerProvider.dataSourceToString());
